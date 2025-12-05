@@ -1,0 +1,13 @@
+# Core dependencies
+insightface>=0.7.3
+onnxruntime>=1.16.0
+opencv-python>=4.8.0
+Pillow>=10.0.0
+numpy>=1.24.0
+yt-dlp>=2023.10.0
+
+# Optional: GPU acceleration
+# onnxruntime-gpu>=1.16.0
+
+# GUI dependencies
+tk>=0.1.0
