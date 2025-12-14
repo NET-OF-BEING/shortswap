@@ -1,11 +1,11 @@
-#!/home/panda/Documents/PythonScripts/faceswap_venv/bin/python3
+#!/home/panda/Documents/PythonScripts/impostr_venv/bin/python3
 """
-Face Swap CLI - Command-line interface for batch face swapping
-Extracted from face_swap_gui_LATEST_FEATURES_V2.py
+Impostr CLI - Command-line interface for batch face swapping
+Professional face-swapping tool with advanced features
 
 Usage:
-    python faceswap_cli.py --source face.jpg --target scene.jpg --output result.jpg
-    python faceswap_cli.py --source face.jpg --target-dir frames/ --output-dir swapped/
+    python impostr_cli.py --source face.jpg --target scene.jpg --output result.jpg
+    python impostr_cli.py --source face.jpg --target-dir frames/ --output-dir swapped/
 """
 
 import os
