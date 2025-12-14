@@ -41,7 +41,7 @@ All of this happens automatically with a single command.
 
 ### Quick Setup
 
-If you already have the faceswap_cli.py working, you're all set!
+If you already have the impostr_cli.py working, you're all set!
 
 ### First-Time Setup
 
@@ -403,7 +403,7 @@ nvidia-smi
 
 Built on top of your existing face-swap infrastructure:
 - `youtube_shorts_downloader.py`
-- `faceswap_cli.py`
+- `impostr_cli.py`
 
 ## Version History
 
@@ -420,7 +420,7 @@ For issues or questions:
 - Check this README's Troubleshooting section
 - Review individual component READMs:
   - `youtube_shorts_downloader_README.md`
-  - `faceswap_cli_README.md`
+  - `impostr_cli_README.md`
 - Ensure all dependencies are properly installed
 - Verify model files are in correct locations
 

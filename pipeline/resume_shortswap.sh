@@ -10,7 +10,7 @@ CYAN='\033[0;36m'
 YELLOW='\033[1;33m'
 NC='\033[0m' # No Color
 
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+SCRIPT_DIR="$HOME/Documents/PythonScripts"
 
 print_error() { echo -e "${RED}✗ $1${NC}"; }
 print_success() { echo -e "${GREEN}✓ $1${NC}"; }
@@ -160,15 +160,15 @@ else
     print_step "Step 3/4: Re-processing incomplete frames..."
 
     # Set up CUDA libraries
-    NVIDIA_LIBS="$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cudnn/lib"
-    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cublas/lib"
-    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cufft/lib"
-    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cusolver/lib"
-    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cusparse/lib"
-    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cuda_runtime/lib"
+    NVIDIA_LIBS="$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cudnn/lib"
+    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cublas/lib"
+    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cufft/lib"
+    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cusolver/lib"
+    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cusparse/lib"
+    NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cuda_runtime/lib"
     export LD_LIBRARY_PATH="$NVIDIA_LIBS:/usr/local/cuda-13.0/lib64:/usr/local/lib/ollama/cuda_v12:$LD_LIBRARY_PATH"
 
-    SWAP_CMD="$SCRIPT_DIR/faceswap_venv/bin/python3 $SCRIPT_DIR/faceswap_cli.py \
+    SWAP_CMD="$SCRIPT_DIR/impostr_venv/bin/python3 $SCRIPT_DIR/impostr_cli.py \
         --source \"$SOURCE_FACE\" \
         --target-dir temp_incomplete_frames/ \
         --output-dir swapped_frames/"

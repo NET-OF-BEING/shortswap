@@ -83,7 +83,7 @@ ${YELLOW}Examples:${NC}
 ${YELLOW}The 5-Step Pipeline:${NC}
   1. Download YouTube Short (yt-dlp)
   2. Extract video into frames (ffmpeg)
-  3. Batch face-swap all frames (faceswap_cli.py)
+  3. Batch face-swap all frames (impostr_cli.py)
   4. Rebuild video from swapped frames (ffmpeg)
   5. Add original audio to final video (ffmpeg)
 
@@ -246,15 +246,15 @@ print_step "Step 3/5: Face-swapping all frames..."
 mkdir -p swapped_frames
 
 # Add CUDA libraries to library path (CUDA 11 from pip packages + CUDA 13 system)
-NVIDIA_LIBS="$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cudnn/lib"
-NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cublas/lib"
-NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cufft/lib"
-NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cusolver/lib"
-NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cusparse/lib"
-NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/faceswap_venv/lib/python3.13/site-packages/nvidia/cuda_runtime/lib"
+NVIDIA_LIBS="$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cudnn/lib"
+NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cublas/lib"
+NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cufft/lib"
+NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cusolver/lib"
+NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cusparse/lib"
+NVIDIA_LIBS="$NVIDIA_LIBS:$SCRIPT_DIR/impostr_venv/lib/python3.13/site-packages/nvidia/cuda_runtime/lib"
 export LD_LIBRARY_PATH="$NVIDIA_LIBS:/usr/local/cuda-13.0/lib64:/usr/local/lib/ollama/cuda_v12:$LD_LIBRARY_PATH"
 
-SWAP_CMD="$SCRIPT_DIR/faceswap_venv/bin/python3 $SCRIPT_DIR/faceswap_cli.py \
+SWAP_CMD="$SCRIPT_DIR/impostr_venv/bin/python3 $SCRIPT_DIR/impostr_cli.py \
     --source \"$SOURCE_FACE\" \
     --target-dir frames/ \
     --output-dir swapped_frames/"

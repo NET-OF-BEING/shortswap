@@ -223,13 +223,13 @@ def main():
         epilog="""
 Examples:
   # Single image swap
-  python faceswap_cli.py --source my_face.jpg --target scene.jpg --output result.jpg
+  python impostr_cli.py --source my_face.jpg --target scene.jpg --output result.jpg
 
   # Batch process directory
-  python faceswap_cli.py --source my_face.jpg --target-dir frames/ --output-dir swapped/
+  python impostr_cli.py --source my_face.jpg --target-dir frames/ --output-dir swapped/
 
   # With watermark
-  python faceswap_cli.py --source face.jpg --target scene.jpg --output result.jpg --watermark
+  python impostr_cli.py --source face.jpg --target scene.jpg --output result.jpg --watermark
         """
     )
 

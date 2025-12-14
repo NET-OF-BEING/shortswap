@@ -37,7 +37,7 @@ pip install insightface opencv-python numpy pillow
 Swap one face into one image:
 
 ```bash
-python faceswap_cli.py --source my_face.jpg --target scene.jpg --output result.jpg
+python impostr_cli.py --source my_face.jpg --target scene.jpg --output result.jpg
 ```
 
 - `--source`: Your face (the face to copy FROM)
@@ -49,7 +49,7 @@ python faceswap_cli.py --source my_face.jpg --target scene.jpg --output result.j
 Process multiple images at once:
 
 ```bash
-python faceswap_cli.py --source my_face.jpg --target-dir frames/ --output-dir swapped/
+python impostr_cli.py --source my_face.jpg --target-dir frames/ --output-dir swapped/
 ```
 
 - `--source`: Your face (same as above)
@@ -95,7 +95,7 @@ ffmpeg -i input_video.mp4 frames/frame_%04d.png
 
 ```bash
 # Swap your face onto all frames
-python faceswap_cli.py \
+python impostr_cli.py \
   --source my_face.jpg \
   --target-dir frames/ \
   --output-dir swapped_frames/
@@ -137,7 +137,7 @@ ffmpeg -i output_video.mp4 -i input_video.mp4 \
 ffmpeg -i input.mp4 frames/frame_%04d.png
 
 # Swap faces
-python faceswap_cli.py -s my_face.jpg -td frames/ -od swapped/
+python impostr_cli.py -s my_face.jpg -td frames/ -od swapped/
 
 # Reassemble with audio
 ffmpeg -framerate 30 -i swapped/frame_%04d.png -c:v libx264 -pix_fmt yuv420p temp.mp4
@@ -148,7 +148,7 @@ ffmpeg -i temp.mp4 -i input.mp4 -c copy -map 0:v:0 -map 1:a:0 output.mp4
 
 ### Example 1: Simple Face Swap
 ```bash
-python faceswap_cli.py \
+python impostr_cli.py \
   --source derek_face.jpg \
   --target movie_scene.jpg \
   --output derek_in_scene.jpg
@@ -156,7 +156,7 @@ python faceswap_cli.py \
 
 ### Example 2: Batch Process with Watermark
 ```bash
-python faceswap_cli.py \
+python impostr_cli.py \
   --source my_face.jpg \
   --target-dir photos/ \
   --output-dir swapped_photos/ \
@@ -165,7 +165,7 @@ python faceswap_cli.py \
 
 ### Example 3: Using CUDA for Faster Processing
 ```bash
-python faceswap_cli.py \
+python impostr_cli.py \
   --source face.jpg \
   --target-dir frames/ \
   --output-dir swapped/ \

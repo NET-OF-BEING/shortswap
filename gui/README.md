@@ -335,7 +335,7 @@ The watermark option is easily accessible for ethical content marking.
 ## Related Documentation
 
 - **ShortSwap_README.md** - Command-line documentation
-- **faceswap_cli_README.md** - Face-swapping component
+- **impostr_cli_README.md** - Face-swapping component
 - **youtube_shorts_downloader_README.md** - Download component
 
 ## Support

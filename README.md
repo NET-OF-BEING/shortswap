@@ -32,13 +32,13 @@ Complete end-to-end automation of YouTube Shorts face-swapping with both CLI and
 - **resume_shortswap.sh** - Resume incomplete/failed jobs
 
 ### Dependencies
-- **faceswap_cli.py** - Face-swapping engine
+- **impostr_cli.py** - Face-swapping engine
 - **youtube_shorts_downloader.py** - YouTube download component
 
 ### Documentation
 - **ShortSwap_README.md** - CLI documentation
 - **ShortSwap_GUI_README.md** - GUI documentation
-- **faceswap_cli_README.md** - Face-swapping component docs
+- **impostr_cli_README.md** - Face-swapping component docs
 - **youtube_shorts_downloader_README.md** - YouTube downloader docs
 
 ## Requirements
@@ -136,7 +136,7 @@ Add watermark to output videos:
 ShortSwap Pipeline:
 ├── YouTube Download (youtube_shorts_downloader.py)
 ├── Frame Extraction (ffmpeg)
-├── Face Swapping (faceswap_cli.py + InsightFace)
+├── Face Swapping (impostr_cli.py + InsightFace)
 ├── Video Reconstruction (ffmpeg)
 └── Audio Integration (ffmpeg)
 ```
